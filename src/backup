@@ -1,0 +1,51 @@
+
+//import {useState} from 'react'
+import './App.css';
+import IG from 'ig-api'
+
+function App() {
+
+
+
+  const apiKey = '8b64e8a326523ecb3a31cfb9e73f55c02c9403b8'
+  const username = 'Zonylaw'
+  const password = 'Xjkdxjkd-1'
+  const ig = new IG(apiKey, false)
+
+  //const [acc, setacc] = useState()
+        // Using promises
+        ig.login(username, password)
+          // Response data is automatically
+          // passed to the resolve callback
+          .then((summary) => {
+            // console.log('summary:', summary)
+
+            //setacc(summary)
+            const {accountInfo} = summary 
+         
+             console.log(accountInfo)
+
+             
+            //  ig.get('positions')
+            //  .then((positions) => {
+            //    console.log('positions:', positions)
+            //  })
+
+              })
+             
+              // const myArr = JSON.parse(acc)
+
+
+
+  return (
+    <div className="App">
+      <header className="App-header">
+       
+        <p>Hello {aacounInfo}</p>
+        {/* myArr.accountType */}
+      </header>
+    </div>
+  );
+}
+
+export default App;
